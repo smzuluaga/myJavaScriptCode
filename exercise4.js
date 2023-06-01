@@ -1,4 +1,4 @@
-// funcion que devuelve un nuevo arreglo con los numeros dados en un array que tienen una raiz cuadrada exacta(cuadrado perfecto), ordenados de menor a mayor.
+// Funcion que devuelve un nuevo arreglo con los numeros dados en un array que tienen una raiz cuadrada exacta(cuadrado perfecto), ordenados de menor a mayor.
 
 function cuadradosPerfectos (array) {
     let newArray = [];
