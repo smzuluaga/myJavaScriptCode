@@ -1,4 +1,4 @@
-# JAVASCRIPT CODE 
+                            # JAVASCRIPT CODE 
 
 > ENG: This is a repository where I will be uploading the practice exercises I have done from my start in programming world.
 
