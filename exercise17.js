@@ -9,7 +9,9 @@ let extraerMultiplosDeDiez = (arrNum) => {
 
 let numbers1 = [20,5,100,81,7,11];
 let numbers2 = [100000,1,120,12];
+let numbers3 = [500,51,200,65];
 
 // Pruebas en consola
 console.log (extraerMultiplosDeDiez(numbers1));
 console.log (extraerMultiplosDeDiez(numbers2));
+console.log (extraerMultiplosDeDiez(numbers3));
