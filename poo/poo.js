@@ -1,21 +1,21 @@
-// Casi todo en js es un objeto,los objetos literales, las instancias de prototipos, los tipos de datos como: arreglos. Prototipo Object es el prototipo madre de todos los prototipos
+// Casi todo en js es un objeto, los objetos literales, las instancias de prototipos, los tipos de datos como: arreglos. Prototipo Object es el prototipo madre de todos los prototipos
 
-// las instancias de protipos son objetos, podemos crear objetos con {}, con object.create y con prototipos.
+// las instancias de los protipos son objetos, podemos crear objetos con {}, con Object.create() y con prototipos.
 
-// los objetos en js estan basados en prototipos, no en clases como la mayoría de lenguajes.
+// los objetos en js estan basados en prototipos, no en clases como la mayoría de lenguajes como python.
 
 // PARADIGMA = formas, caminos, indicaciones, lineamientos para resolver un problema.
 
 /* POO - es uno de los paradigmas más populares de la programacion.
     1. ORDEN - es uno de los problemas que este paradigma se propuso a mejorar mejorar
-    2. REUTILIZAR CÓDIGO 
+    2. REUTILIZAR CÓDIGO - DRY
 
 */
 
 /* OBJETOS LITERALES = objetos {clave:valor} que declaramos e inicializamos nosotros con un conjunto x de datos a partir de una necesidad. somos nosotros quienes escribimos el contenido de dicho objeto ( OBJETO LITERAL !== OBJETOS DE POO (instancias de clases/prototipos)) los objetos literales son diferentes a las instancias de un prototipo
 
 */
-// PROTOTIPOS - son plantillas, que proporcionan mecanismos de herencia. los objetos tienne una propiedad prototype donde se almacenan las propiedades y metodos  que hereda del prototipo que esta instanciando.
+// PROTOTIPOS - son plantillas, que proporcionan mecanismos de herencia. los objetos tienen una propiedad prototype donde se almacenan las propiedades y metodos  que hereda del prototipo que esta instanciando.
 
     // CADENA DE PROTOTIPOS - cuando la propiedad prototipo de un objeto, a su vez tiene una propiedad prototipo, explica por qué objetos diferentes pueden tener disponibles poropiedades y métodos definidos en otros objetos. los métodos y propiedades son definidos en la propiedad prototype, que reside en la función constructora del objeto, no en la instancia misma del objeto.
 
@@ -29,12 +29,13 @@
     // DECLARAR PROTOTIPOS EN JS
     /*
         function Student(name, age, cursosAprobados) {
-        this.name = name;
-        this.age = age;
-        this.cursosAprobados = cursosAprobados;
+          this.name = name;
+          this.age = age;
+          this.cursosAprobados = cursosAprobados;
+
         // esta es una forma de declarar métodos en en prototipo.
-        this.aprobarCurso = function (nuevoCurso) {
-            this.cursosAprobados.push(nuevoCurso);
+          this.aprobarCurso = function (nuevoCurso) {
+              this.cursosAprobados.push(nuevoCurso);
         };
         }
 
@@ -47,24 +48,25 @@
     // INSTANCIAR UN OBJETO DE UN PROTOTIPO
     //      const ivan = new Student("Ivan", 30, ["CSS", "C++"]);
 
-// CLASES - bloques de codigo que definen métodos y atributos básicos por defecto para crear objetos. Son una forma de trabajar prototipos a parte de las funciones, es preferida por muchos porque tiene una sintaxy más amigable y similar al manejo de clases de otros lenguajes, sin embargo, es lo mismo, trabajar con prorotipos.
+// CLASES - bloques de codigo que definen métodos y atributos básicos por defecto para crear objetos. Son una forma de trabajar prototipos a parte de las funciones vistas previamente, es preferida por muchos porque tiene una sintaxy más amigable y similar al manejo de clases de otros lenguajes, sin embargo, es lo mismo, trabajar con prorotipos.
 
 // DECLARAR PROTOTIPOS CON SINTAXYS CLASS
 /*
     class Student2 {
-    constructor(name, age, cursosAprobados = []) {
-        this.name = name;
-        this.age = age;
-        this.cursosAprobados = cursosAprobados;
-        // FORMA 1 PARA DEFINIR METODOS - en constructor
-        this.aprobarCurso = (nuevoCurso) => {
-        this.cursosAprobados.push(nuevoCurso);
-        };
-    }
-    // FORMA 2 PARA DEFINIR METODOS - dentro de la clase, pero fuera del constructor
-    aprobarCurso2(nuevoCurso) {
-        this.cursosAprobados.push(nuevoCurso);
-    }
+      constructor(name, age, cursosAprobados = []) {
+          this.name = name;
+          this.age = age;
+          this.cursosAprobados = cursosAprobados;
+
+          // FORMA 1 PARA DEFINIR METODOS - en constructor
+          this.aprobarCurso = (nuevoCurso) => {
+            this.cursosAprobados.push(nuevoCurso);
+          };
+      }
+      // FORMA 2 PARA DEFINIR METODOS - dentro de la clase, pero fuera del constructor
+      aprobarCurso2(nuevoCurso) {
+          this.cursosAprobados.push(nuevoCurso);
+      }
     }
 
     // FORMA 3 PARA DEFINIR METODOS - fuera de la clase, utilizando la palabra reservada 'prototype'.
@@ -75,10 +77,10 @@
     jorge = new Student2("Jorge", 30, ["RUBI", "PEARL"]);
 */
 
-// ROR (Recibe un Objeto, Retorna un Objeto) - es una forma de declarar el constructor, de forma que en vez de pasar x numero de parámetros para intanciar un prototipo, se pasa un solo parámetro que sería un objeto que contiene todos los argumentos que requiere la clase para ser onstanciada. para esto, los parámetros del constructor se pasan dentro de {} y cuando se está instanciando la clase  se pasan los argumentos en forma de objeto literal.
+// ROR (Receive an Object- Return an Object) - es una forma de declarar el constructor, de forma que en vez de pasar x numero de parámetros para intanciar un prototipo, se pasa un solo parámetro que sería un objeto literal que contiene todos los argumentos que requiere la clase para ser instanciada. para esto, los parámetros del constructor se pasan dentro de {} y cuando se está instanciando la clase  se pasan los argumentos en forma de objeto literal.
 /*
     class Student2 {
-    constructor({ name, age, cursosAprobados = [] }) {
+    constructor({name, age, cursosAprobados = []}) {
         this.name = name;
         this.age = age;
         this.cursosAprobados = cursosAprobados;
@@ -100,7 +102,7 @@
 
 // ABSTRACCION - a partir de un objeto, se abstrae o analiza sus propiedades y acciones para crear un molde (prototipo) para posteriormente crear instancias de ese prorotipo
 
-// ENCAPSULAMIENTO - permite limitar el acceso de ciertos atributos y propiedades en los prototipos y objetos.cuando hablamos de encapsulamiento, hablamos de esconder métodos y atributos de forma que estos queden privados y solo lo que esté por dentro de la clase puede manipular  dichos elementos privados de dicha clase, y esto permite restringir la alteracion de métodos y atributos. PARA ENCAPSULAR UN ATRIBUTO EN JS SE USA '_' DELANTE DE LA VARIABLE.
+// ENCAPSULAMIENTO - permite limitar el acceso de ciertos atributos y propiedades en los prototipos y objetos. Cuando hablamos de encapsulamiento, hablamos de esconder métodos y atributos de forma que estos queden privados y solo lo que esté por dentro de la clase puede manipular  dichos elementos privados de dicha clase, y esto permite restringir la alteracion de métodos y atributos. PARA ENCAPSULAR UN ATRIBUTO EN JS SE USA '_' DELANTE DE LA VARIABLE.
     /*
         class Student {
             constructor({ name, age,}) {
@@ -109,7 +111,7 @@
             }
         }
         */
-    // NOTA: en Js no podemos esconder métodos y atributos, en los prototipos de JS, no existen los métodos ya tributos privados, solamente publicos, sin embargo, la parte de restringir la alteracion de atributos y metodos si existe.
+    // NOTA: en Js no podemos esconder métodos y atributos, en los prototipos de JS, no existen los métodos y atributos privados, solamente publicos, sin embargo, la parte de restringir la alteracion de atributos y metodos si existe.
 
     // para hacer encapsulamiento en JS se podemos usar diferentes formas:
     //  *getters y setters
@@ -125,11 +127,11 @@
                 this._name = name; // ENCAPSULAMIENTO
                 this.age = age;
             }
-            // DECLARACION DEL GETTER - se hace con la palabra reservada get y se crea una funcion cualquiera (el nombre usualemte debe ser el mismo nombre del atributo encapsulado) que retorne el valor del atributo encapsulado.
+            // DECLARACION DEL GETTER - se crea una funcion con la palabra reservada get y el nombre usualemte debe ser el mismo nombre del atributo encapsulado, que retorne el valor del atributo encapsulado.
             get name() {
                 return this._name;
             }
-            // DECLARACION DEL SETTER - se hace con la palabra reservada set y se crea una funcion cualquiera (el nombre usualemte debe ser el mismo nombre del atributo encapsulado) que asigne un nuevo valor al atributo encapsulado.
+            // DECLARACION DEL SETTER - se crea una funcion con la palabra reservada set y el nombre usualemte debe ser el mismo nombre del atributo encapsulado, que asigne un nuevo valor al atributo encapsulado.
             set name (newName) {
                 this._name = newName
             }
@@ -185,6 +187,7 @@
 */
     // si en el constructor se uso la sintaxys ROR, al extender la superclase a una subclase, el constructor inicializaría un solo parámnetro, el objeto que contiene todos los parámetros
 //    HERENCIA CON SINTAXYS CLAS - CON ROR
+/*
       class Student {
         constructor({name,age}){
             this.name = name
@@ -198,8 +201,9 @@
       } 
         h = new FreeStudent({name: 'gilberto', age: 36})
         // console.log(h);
-
+*/
     // si no se va a agregar nuevas propiedades a la nueva subclase, no es necesario inicializar el constructor de la superclase, en la subclase.
+    
 /*      HERENCIA CUANDO NO SE VA A AGREGAR NUEVAS PROPIEDADES
         class FreeStudent extends Student {
         } 
