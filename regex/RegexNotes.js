@@ -101,6 +101,7 @@
         //text.replace("Microsoft","W3Schools"); // usando solo string.
         // let result = text.replace(/microsoft/i, "W3Schools"); // usando regex con modificador case insensitive
         //Output => Please visit W3Schools
+
     
     // REPLACEALL - busca un match, hace un reemplazo de todas las coincidencias  con el parámetro que le pasemos y retrona el string con los cambios. Example:
         // const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
@@ -108,12 +109,7 @@
         // console.log(p.replaceAll(regex, 'ferret'));
 
 
-        //text = 'Please visit Microsoft'
-        //text.replace("Microsoft","W3Schools"); // usando solo string.
-        // let result = text.replace(/microsoft/i, "W3Schools"); // usando regex con modificador case insensitive
-        //Output => Please visit W3Schools
-
-    // MATCH - retorna un array con las coincidencias encontradas, si no se usa el modiffier g, retorna solo la primera coincidencia. ecample
+    // MATCH - retorna un array con las coincidencias encontradas, si no se usa el modiffier g, retorna solo la primera coincidencia. example:
         //const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.'
         //const regex = /[A-Z]/;
         //const found = paragraph.match(regex)
@@ -131,7 +127,7 @@
         //console.log(words);
         // Output => Array ["", "he", "quick", "brown", "", "ox", "jumps", "over", "the", "lazy", "dog", ""] 
 
-    // USING TEST - busca el patron definido ene l regezx y retorna un booleano. Example=
+    // USING TEST - busca el patron definido en el regezx y retorna un booleano. Example=
 
         // const pattern = /e/;
         // pattern.test("The best things in life are free!"); // el regex se puede almacenar o no en una variable, puede ser de esta forma o la de la siguietne linea.
